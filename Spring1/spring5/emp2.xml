@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    
+	<bean id="deptbean11" class="com.spring5.Dept" >
+			<property name = "subj_code" value = "AHHH"/>
+         	<property name = "name" value = "asas"/>
+         	<property name = "head" value = "asasas"/>
+         	<property name = "list">
+				<list>
+					<ref bean="myemp1" />
+					<ref bean="myemp2" />
+					<ref bean="myemp3" />
+				</list>
+			</property>
+	</bean>
+
+
+
+	<bean id="myemp1" class="com.spring5.Employee2" >
+		<property name = "eid" value = "123"/>
+		<property name = "ename" value = "abc"/>
+		<property name = "sal" value = "75242"/>
+		<property name = "bu" value = "AB-UI"/>
+   </bean>
+   
+   <bean id="myemp2" class="com.spring5.Employee2" >
+		<property name = "eid" value = "123"/>
+		<property name = "ename" value = "abc"/>
+		<property name = "sal" value = "75242"/>
+		<property name = "bu" value = "AB-UI"/>
+   </bean>
+   
+   <bean id="myemp3" class="com.spring5.Employee2" >
+		<property name = "eid" value = "123"/>
+		<property name = "ename" value = "abc"/>
+		<property name = "sal" value = "75242"/>
+		<property name = "bu" value = "AB-UI"/>
+   </bean>
+
+	
+
+
+</beans>

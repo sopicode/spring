@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	
+	<bean id="myemp" class="com.inautix.Employee" >
+		<property name = "eid" value = "123"/>
+		<property name = "ename" value = "abc"/>
+		<property name = "sal" value = "75242"/>
+		<property name = "bu" value = "AB-UI"/>
+	</bean>
+
+
+	<bean id = "constbean" class="com.inautix.Employee">
+     <constructor-arg index = "0" value = "2001"/>
+      <constructor-arg index = "1" value = "abc"/>
+      <constructor-arg index = "2" value = "212110"/>
+      <constructor-arg index = "3" value = "Zara"/>
+   </bean>
+
+
+</beans>

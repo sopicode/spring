@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<!-- using inner bean -->
+	
+	<bean id="myemp" class="com.inautix.Employee2" >
+		<property name = "eid" value = "123"/>
+		<property name = "ename" value = "abc"/>
+		<property name = "sal" value = "75242"/>
+		<property name = "bu" value = "AB-UI"/>
+		<property name = "dept">
+         	<bean id = "mydept" class = "com.inautix.Dept">
+         	<property name = "id" value = "123"/>
+         	<property name = "name" value = "asas"/>
+         	<property name = "head" value = "asasas"/>
+         	</bean>
+      	</property>
+   </bean>
+	
+	
+	
+	<!-- manual wiring using ref bean -->
+	
+	<bean id="myemp2" class="com.inautix.Employee2" >
+		<property name = "eid" value = "123"/>
+		<property name = "ename" value = "abc"/>
+		<property name = "sal" value = "75242"/>
+		<property name = "bu" value = "AB-UI"/>
+		<property name="dept">
+			<ref bean="deptbean" />
+		</property>
+	</bean>
+	
+	<bean id="deptbean" class="com.inautix.Dept" >
+			<property name = "id" value = "123"/>
+         	<property name = "name" value = "asas"/>
+         	<property name = "head" value = "asasas"/>
+	</bean>
+	
+
+
+	<!-- collections  -->
+
+
+	<bean id="collbean" class="com.inautix.Collection" >
+			<property name = "arr">
+				<list>
+				<value>aaa</value>
+				<value>bb</value>
+				<value>ccc</value>
+				<value>ddd</value>
+				</list>
+			</property>
+			<property name = "set">
+				<set>
+				<value>aaa</value>
+				<value>bb</value>
+				<value>aaa</value>
+				<value>ddd</value>
+				</set>
+			</property>
+			<property name = "map">
+				<map>
+				<entry key="1" value="aa" />
+				</map>
+			</property>
+			<property name = "prop">
+				<props>
+					<prop key="aa">sas</prop>
+					<prop key="bb">sas</prop>
+					<prop key="vv">sas</prop>
+					<prop key="cc">sas</prop>
+				</props>
+			</property>
+			<property name = "deptlist">
+				<list>
+					<ref bean="deptbean1" />
+					<ref bean="deptbean2" />
+				</list>
+			</property>
+ 	</bean>
+
+
+	<bean id="deptbean1" class="com.inautix.Dept" >
+			<property name = "id" value = "123"/>
+         	<property name = "name" value = "asas"/>
+         	<property name = "head" value = "asasas"/>
+	</bean>
+	
+	<bean id="deptbean2" class="com.inautix.Dept" >
+			<property name = "id" value = "123"/>
+         	<property name = "name" value = "asas"/>
+         	<property name = "head" value = "asasas"/>
+	</bean>
+	
+
+
+</beans>
